@@ -119,6 +119,18 @@ command:
 #  export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
 #  setup-env-and-run test_stress_boot.py
 
+id: tdx-guest/td-tsc
+category_id: tdx-guest
+flags: simple
+_summary: Test guest TSC config
+depends:
+after:
+requires:
+  executable.name == 'qemu-system-x86_64'
+command:
+  export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
+  setup-env-and-run test_guest_tsc_config.py
+
 id: tdx-guest/td-measurement
 category_id: tdx-guest
 flags: simple
